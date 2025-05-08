@@ -75,7 +75,7 @@ const Home = () => {
         className="flex flex-col md:flex-row items-center md:items-baseline justify-between p-8 md:px-16 md:py-20"
       >
         <div className="mb-8 md:mb-0">
-          <h1 className="text-3xl md:text-9xl title text-main leading-tight md:w-11/12 w-[100%]">
+          <h1 className="text-3xl md:text-8xl title text-main leading-tight md:w-11/12 w-[100%]">
             Unleash Your Business with Aurelion Creative
           </h1>
         </div>
