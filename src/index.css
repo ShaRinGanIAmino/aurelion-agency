@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Abril+Fatface&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  --color-main: #2e5bef;
+  --color-text: #343434;
+  --color-background: #ffffff;
+}
+
+@layer base {
+  :root {
+    --color-main: #2e5bef;
+    --color-text: #343434;
+    --color-background: #ffffff;
+  }
+}
+
+@layer utilities {
+  .title {
+    font-family: "Abril Fatface", cursive;
+  }
+  .paragraph {
+    font-family: "Abhaya Libre", serif;
+  }
+  .nav-item {
+    @apply hover:text-main cursor-pointer;
+  }
+
+  .main-button {
+    @apply bg-main text-white px-6 py-2 text-sm hover:bg-blue-700 transition cursor-pointer;
+  }
+
+  .secondary-button {
+    @apply border-2 border-main text-main px-6 py-2 hover:bg-blue-100 transition cursor-pointer;
+  }
+
+  .main-button-swipe {
+    @apply bg-blue-900 text-white px-6 py-2 text-sm hover:bg-gray-900 transition cursor-pointer;
+  }
+
+  .secondary-button-swipe {
+    @apply border-2 border-white text-white px-6 py-2 hover:bg-white hover:text-main transition cursor-pointer;
+  }
+}
+
+@keyframes scrollContainer {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll-container {
+  animation: scrollContainer 30s linear infinite;
+}
+
+@media (max-width: 768px) {
+  .animate-scroll-container {
+    animation-duration: 20s;
+  }
+}
