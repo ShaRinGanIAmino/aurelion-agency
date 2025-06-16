@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import type { BlogPost } from "./Blog";
 import blog1 from "../assets/blog1.png";
 import blog2 from "../assets/blog2.png";
@@ -58,6 +58,18 @@ const BlogBody: React.FC = () => {
   return (
     <section className="bg-white py-20 px-8 md:px-16 text-gray-900">
       <div className="max-w-4xl mx-auto space-y-8">
+        {/* Back Button */}
+        <div>
+          <div>
+            <Link
+              to="/blogs"
+              className="inline-flex items-center text-main font-medium transition"
+            >
+              <span className="text-xl mr-2">←</span>{" "}
+              <span className=" hover:underline">Back to Blogs</span>
+            </Link>
+          </div>
+        </div>
         <img
           src={blog.image}
           alt={blog.title}
