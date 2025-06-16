@@ -4,6 +4,7 @@ import service1 from "../assets/service1.png";
 import service2 from "../assets/service2.png";
 import service3 from "../assets/service3.png";
 import brand from "../assets/brand.png";
+import { Link } from "react-router-dom";
 
 const services = [
   {
@@ -68,7 +69,7 @@ const testimonials = [
 
 const Home = () => {
   return (
-    <body>
+    <div>
       {/* Landing Section */}
       <section
         id="landing"
@@ -86,8 +87,14 @@ const Home = () => {
             explore limitless creativity and achieve their fullest potential.
           </p>
           <div className="flex space-x-4">
-            <button className="title main-button">Learn More</button>
-            <button className="title secondary-button">Approach</button>
+            <button className="title main-button">
+              <a href="https://www.linkedin.com/company/aurelion-creative/">
+                Learn More
+              </a>
+            </button>
+            <Link to="/approach">
+              <button className="title secondary-button">Approach</button>
+            </Link>
           </div>
         </div>
       </section>
@@ -164,7 +171,7 @@ const Home = () => {
           <h3 className="max-w-4xl text-2xl md:text-6xl title text-blue-300 md:text-white md:leading-18 leading-8">
             Unlock Your Brand's Potential with Our Tailored Marketing Solutions
           </h3>
-          <p className="paragraph max-w-2xl text-lg text-white">
+          <p className="paragraph max-w-2xl text-lg text-white ml-12">
             At Aurelion Creative, we specialize in transforming your brand's
             identity through innovative strategies. Our team harnesses the power
             of creativity to elevate your presence in the digital landscape.
@@ -188,9 +195,11 @@ const Home = () => {
               <p className="paragraph text-left text-lg md:text-xl text-white">
                 {service.description}
               </p>
-              <button className="text-blue-300 font-semibold paragraph hover:underline">
-                Learn More
-              </button>
+              <Link to="/services">
+                <button className="text-blue-300 font-semibold paragraph hover:underline">
+                  Learn More
+                </button>
+              </Link>
             </div>
           ))}
         </div>
@@ -210,7 +219,7 @@ const Home = () => {
           are designed to elevate your brand and engage your audience
           effectively.
         </p>
-        <a href="#" className="relative group block w-full">
+        <Link to="/approach" className="relative group block w-full">
           <img
             src={brand}
             alt="Portfolio Example"
@@ -221,7 +230,7 @@ const Home = () => {
               View Projects
             </span>
           </span>
-        </a>
+        </Link>
       </section>
       {/* Feedbacks Section */}
       <section
@@ -241,7 +250,7 @@ const Home = () => {
           {[...testimonials, ...testimonials].map((t, i) => (
             <div
               key={i}
-              className="w-[250px] sm:w-[280px] md:w-[300px] max-w-full bg-gray-100 rounded-lg p-6 shadow-md mx-2 overflow-hidden flex flex-col justify-center items-center text-center"
+              className="w-[250px] sm:w-[280px] md:w-[300px] max-w-full bg-gray-100 rounded-lg p-6 shadow-sm mx-2 overflow-hidden flex flex-col justify-center items-center text-center"
             >
               <h3 className="text-sm sm:text-base md:text-lg italic text-main paragraph mb-4 line-clamp-6 break-words overflow-hidden">
                 “{t.quote}”
@@ -267,12 +276,16 @@ const Home = () => {
 
           {/* Call-to-Action Buttons */}
           <div className="flex space-x-4">
-            <button className="title main-button-swipe">Contact</button>
+            <button className="title main-button-swipe">
+              <a href="https://www.linkedin.com/company/aurelion-creative/">
+                Contact
+              </a>
+            </button>
             <button className="title secondary-button-swipe">Consult</button>
           </div>
         </div>
       </section>
-    </body>
+    </div>
   );
 };
 

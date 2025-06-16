@@ -4,6 +4,7 @@ import {
   FaTwitter,
   FaLinkedinIn,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -41,28 +42,28 @@ const Footer = () => {
           </h6>
           <ul className="text-sm space-y-1">
             <li>
-              <a
-                href="#services"
+              <Link
+                to="/services"
                 className="hover:text-main transition paragraph"
               >
                 Branding
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#services"
+              <Link
+                to="/services"
                 className="hover:text-main transition paragraph"
               >
                 Digital Marketing
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#services"
+              <Link
+                to="/services"
                 className="hover:text-main transition paragraph"
               >
                 Design Solutions
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -74,30 +75,33 @@ const Footer = () => {
           </h6>
           <ul className="text-sm space-y-1">
             <li>
-              <a href="#about" className="hover:text-main transition paragraph">
+              <Link
+                to="/about"
+                className="hover:text-main transition paragraph"
+              >
                 About Us
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#portfolio"
+              <Link
+                to="/approach"
                 className="hover:text-main transition paragraph"
               >
-                Portfolio
-              </a>
+                Our Approach
+              </Link>
             </li>
             <li>
-              <a
-                href="#feedbacks"
+              <Link
+                to="/blogs"
                 className="hover:text-main transition paragraph"
               >
-                Testimonials
-              </a>
-            </li>
-            <li>
-              <a href="#blog" className="hover:text-main transition paragraph">
                 Blog
-              </a>
+              </Link>
+            </li>
+            <li>
+              <Link to="/faq" className="hover:text-main transition paragraph">
+                FAQ
+              </Link>
             </li>
           </ul>
         </div>

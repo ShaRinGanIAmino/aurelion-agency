@@ -1,21 +1,34 @@
 import { useState } from "react";
 import main from "../assets/main.svg";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <nav className="flex items-center justify-between p-4 md:px-12 relative">
       <div className="flex items-center space-x-4">
-        <img src={main} alt="Logo" className="w-40 h-10 object-contain" />
+        <Link to="/home">
+          <img src={main} alt="Logo" className="w-40 h-10 object-contain" />
+        </Link>
       </div>
 
       {/* Desktop Menu */}
       <ul className="hidden md:flex space-x-4 text-sm md:text-base justify-center items-center">
-        <li className=" paragraph nav-item">Services</li>
-        <li className="paragraph nav-item">About Us</li>
-        <li className="paragraph nav-item">Portfolio</li>
-        <li className="paragraph nav-item">Blog</li>
-        <li className="paragraph nav-item">FAQ</li>
+        <li className=" paragraph nav-item">
+          <Link to="/services">Services</Link>
+        </li>
+        <li className="paragraph nav-item">
+          <Link to="/about">About Us</Link>
+        </li>
+        <li className="paragraph nav-item">
+          <Link to="/approach">Our Approach</Link>
+        </li>
+        <li className="paragraph nav-item">
+          <Link to="/blogs">Blog</Link>
+        </li>
+        <li className="paragraph nav-item">
+          <Link to="/faq">FAQ</Link>
+        </li>
         <button className=" title main-button ml-6 hidden md:block">
           Book a call
         </button>
@@ -54,11 +67,21 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <ul className="absolute top-full left-0 w-full bg-white text-black flex flex-col items-center py-4 space-y-4 shadow-md md:hidden z-50">
-          <li className="paragraph nav-item">Services</li>
-          <li className="paragraph nav-item">About Us</li>
-          <li className="paragraph nav-item">Portfolio</li>
-          <li className="paragraph nav-item">Blog</li>
-          <li className="paragraph nav-item">FAQ</li>
+          <li className=" paragraph nav-item">
+            <Link to="/services">Services</Link>
+          </li>
+          <li className="paragraph nav-item">
+            <Link to="/about">About Us</Link>
+          </li>
+          <li className="paragraph nav-item">
+            <Link to="/approach">Our Approach</Link>
+          </li>
+          <li className="paragraph nav-item">
+            <Link to="/blogs">Blog</Link>
+          </li>
+          <li className="paragraph nav-item">
+            <Link to="/faq">FAQ</Link>
+          </li>
           <button className=" title main-button">Book a call</button>
         </ul>
       )}
